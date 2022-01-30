@@ -1,6 +1,6 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
-import { followAC, unfollowAC } from './redux/reducers/user-reducer';
+import { followAC, unfollowAC } from './redux/reducers/user-reducer.ts';
 import  Photo  from './assets/img.jpg';
 
 const User = ({user}) => {

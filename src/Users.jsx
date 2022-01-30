@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { getUsersAC, toggleIsFetchAC } from './redux/reducers/user-reducer';
+import { getUsersAC, toggleIsFetchAC } from './redux/reducers/user-reducer.ts';
 import User from './User';
 import Preloader from './Preloader';
 import * as axios from 'axios';
@@ -16,11 +16,12 @@ const Users = () => {
         dispatch(toggleIsFetchAC(true));
         axios.get('https://jsonplaceholder.typicode.com/users')
             .then(response => {
-           console.log(response)
+         
         dispatch(toggleIsFetchAC(false));
-        dispatch(getUsersAC(response.data))
+                dispatch(getUsersAC(response.data))
+                console.log(response.data)
         })
-        
+
     }, [])
 
     return (
